@@ -96,7 +96,14 @@ p_btns.addEventListener("click", (e) => {
 
     p_img_elem.forEach((curElem) => curElem.classList.add("p-image-not-acitve"));
 
-    img_active.forEach((curElem) =>
-        curElem.classList.remove("p-image-not-acitve")
-    );
+    if (btn_num === "all") {
+        p_img_elem.forEach((curElem) =>
+            curElem.classList.remove("p-image-not-acitve")
+        );
+    } else {
+        const img_active = document.querySelectorAll(`.p-btn--${btn_num}`);
+        img_active.forEach((curElem) =>
+            curElem.classList.remove("p-image-not-acitve")
+        );
+    }
 });
